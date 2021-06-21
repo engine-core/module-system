@@ -19,7 +19,6 @@ use Yii;
  *
  * @property integer $status
  * @property integer $order
- * @property string $rule
  *
  * @author E-Kevin <e-kevin@qq.com>
  */
@@ -34,11 +33,7 @@ class Setting extends SettingModel
         $rules = parent::rules();
         $rules['otherInteger'][0] = array_merge($rules['otherInteger'][0], ['status', 'order']);
 
-        return array_merge($rules, [
-            // rule rules
-            'ruleRequired' => ['rule', 'required'],
-            'ruleString' => ['rule', 'string'],
-        ]);
+        return $rules;
     }
 
     /**
@@ -49,7 +44,6 @@ class Setting extends SettingModel
         return array_merge(parent::attributeLabels(), [
             'status' => Yii::t('ec/app', 'Status'),
             'order' => Yii::t('ec/app', 'Sort Order'),
-            'rule' => Yii::t('ec/modules/system', 'Rule'),
         ]);
     }
 
@@ -60,7 +54,6 @@ class Setting extends SettingModel
     {
         return array_merge(parent::attributeHints(), [
             'order' => Yii::t('ec/modules/system', 'Set the sort of items.'),
-            'rule' => Yii::t('ec/modules/system', 'Set validation rules. Many rules are signed in English ; or newline separation.'),
         ]);
     }
 

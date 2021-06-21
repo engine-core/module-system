@@ -58,6 +58,7 @@ $this->title = end($this->params['breadcrumbs'])['label'] . ' - ' . $model->titl
                 'attribute' => 'type',
                 'value' => $configTypeList[$model->type],
             ],
+            'rule'
         ],
     ])
     ?>

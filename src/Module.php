@@ -22,6 +22,11 @@ class Module extends Modularity
     /**
      * @inheritdoc
      */
+    public $controllerNamespace = 'EngineCore\modules\system\controllers';
+
+    /**
+     * @inheritdoc
+     */
     public $defaultRoute = 'setting-management';
 
 }
